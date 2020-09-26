@@ -1,7 +1,7 @@
 var PLAY = 1;
 var END = 0;
 var gameState = PLAY;
-
+var displayWidth,displayHeight;
 var trex, trex_running, trex_collided;
 var ground, invisibleGround, groundImage;
 
@@ -37,7 +37,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(600, 200);
+  createCanvas(displayWidth-20,displayHeight-10);
   
   trex = createSprite(50,180,20,50);
   trex.addAnimation("running", trex_running);
@@ -66,7 +66,9 @@ function setup() {
   
   cloudsGroup = new Group();
   obstaclesGroup = new Group();
-  
+  console.log(displayWidth);
+  console.log(displayHeight);
+
   score = 0;
 }
 
